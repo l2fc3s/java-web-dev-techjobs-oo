@@ -37,4 +37,14 @@ public class JobTest {
         //System.out.println(constructorTest.getEmployer().toString() instanceof String);
     }
 
+    @Test
+    public void testJobsForEquality(){
+        Job equalityTest = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job equalityTest2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertFalse(equalityTest.getId() == equalityTest2.getId());
+//        System.out.println(equalityTest.getId());
+//        System.out.println(equalityTest2.getId());
+    }
+
 }
