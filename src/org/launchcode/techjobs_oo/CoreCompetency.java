@@ -32,6 +32,18 @@ public class CoreCompetency {
         return id == that.id;
     }
 
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
