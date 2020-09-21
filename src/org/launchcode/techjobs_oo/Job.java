@@ -45,11 +45,11 @@ public class Job {
 
         return
                 "\nID: " + (id == 0 ? errorMessage : id) + " \n"+
-                "Name: "+ (name == "" ? errorMessage : name) + " \n"+
-                "Employer: "+ (employer.toString() == "" ? errorMessage : employer)+ " \n"+
-                "Location: "+ (location.toString() == "" ? errorMessage : location) + " \n"+
-                "Position Type: "+ (positionType.toString() == "" ? errorMessage : positionType) + " \n"+
-                "Core Competency: "+ (coreCompetency.toString() == "" ? errorMessage : coreCompetency) + " \n";
+                "Name: "+ (name == "" || name == null ? errorMessage : name) + " \n"+
+                "Employer: "+ (employer.toString() == "" || employer.toString() == null ? errorMessage : employer)+ " \n"+
+                "Location: "+ (location.toString() == "" || location.toString() == null ? errorMessage : location) + " \n"+
+                "Position Type: "+ (positionType.toString() == "" || positionType.toString() == null ? errorMessage : positionType) + " \n"+
+                "Core Competency: "+ (coreCompetency.toString() == "" || coreCompetency.toString() == null ? errorMessage : coreCompetency) + " \n";
     }
 
 

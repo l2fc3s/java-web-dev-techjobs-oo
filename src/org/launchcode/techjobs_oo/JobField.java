@@ -3,19 +3,6 @@ package org.launchcode.techjobs_oo;
 import java.util.Objects;
 
 public abstract class JobField {
-    /*
-    What fields do ALL FOUR of the classes have in common?
-    **id, nextId, value
-
-    Which constructors are the same in ALL FOUR classes?
-    **id constructor, value constructor,
-
-    What getters and setters do ALL of the classes share?
-    **getId, getValue, setValue
-
-    Which custom methods are identical in ALL of the classes?
-    **Custom toString, equals, and hashCode methods
-     */
 
     //Fields:
     private int id;
