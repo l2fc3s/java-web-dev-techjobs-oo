@@ -37,6 +37,22 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    @Override
+    public String toString(){
+
+        //If a field is empty, the method should add "Data not available"
+        String errorMessage = "Data not available";
+
+        return
+                "\nID: " + (id == 0 ? errorMessage : id) + " \n"+
+                "Name: "+ (name == "" ? errorMessage : name) + " \n"+
+                "Employer: "+ (employer.toString() == "" ? errorMessage : employer)+ " \n"+
+                "Location: "+ (location.toString() == "" ? errorMessage : location) + " \n"+
+                "Position Type: "+ (positionType.toString() == "" ? errorMessage : positionType) + " \n"+
+                "Core Competency: "+ (coreCompetency.toString() == "" ? errorMessage : coreCompetency) + " \n";
+    }
+
+
     // getters and setters
     public String getName() {
         return name;

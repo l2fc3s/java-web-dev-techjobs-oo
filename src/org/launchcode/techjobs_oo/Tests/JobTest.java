@@ -47,4 +47,42 @@ public class JobTest {
 //        System.out.println(equalityTest2.getId());
     }
 
+    //test if first and last char is blank
+    @Test
+    public void toStringTest1(){
+        Job toStringTest = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        //System.out.println(toStringTest.toString());
+        int endOfStringIndex = toStringTest.toString().length() - 1;
+        assertTrue(toStringTest.toString().charAt(0) == toStringTest.toString().charAt(endOfStringIndex));
+    }
+
+    @Test
+    public void toStringTest2(){
+        Job toStringTest = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String stringFormat =
+                        "\nID: " + toStringTest.getId() + " \n"+
+                        "Name: "+ toStringTest.getName() + " \n"+
+                        "Employer: "+ toStringTest.getEmployer() + " \n"+
+                        "Location: "+ toStringTest.getLocation() + " \n"+
+                        "Position Type: "+ toStringTest.getPositionType() + " \n"+
+                        "Core Competency: "+ toStringTest.getCoreCompetency() + " \n";
+
+        assertEquals(toStringTest.toString(),stringFormat);
+    }
+
+    @Test
+    public void toStringTest3(){
+        Job toStringTest = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        //System.out.println(toStringTest.toString());
+        String stringFormat =
+                "\nID: " + toStringTest.getId() + " \n"+
+                        "Name: "+ "Data not available" + " \n"+
+                        "Employer: "+ "Data not available" + " \n"+
+                        "Location: "+ "Data not available" + " \n"+
+                        "Position Type: "+ "Data not available" + " \n"+
+                        "Core Competency: "+ "Data not available" + " \n";
+
+        assertEquals(toStringTest.toString(),stringFormat);
+    }
+
 }
