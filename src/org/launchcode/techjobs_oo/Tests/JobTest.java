@@ -49,15 +49,16 @@ public class JobTest {
 
     //test if first and last char is blank
     @Test
-    public void toStringTest1(){
+    public void stringContainsBlankLineBeforeAndAfter(){
         Job toStringTest = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         //System.out.println(toStringTest.toString());
         int endOfStringIndex = toStringTest.toString().length() - 1;
         assertTrue(toStringTest.toString().charAt(0) == toStringTest.toString().charAt(endOfStringIndex));
     }
 
+    //should contain a label for each field, followed by the data stored in that field
     @Test
-    public void toStringTest2(){
+    public void stringContainsLabelAndData(){
         Job toStringTest = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String stringFormat =
                         "\nID: " + toStringTest.getId() + " \n"+
@@ -70,8 +71,9 @@ public class JobTest {
         assertEquals(toStringTest.toString(),stringFormat);
     }
 
+    //If a field is empty, the method should add, “Data not available” after the label.
     @Test
-    public void toStringTest3(){
+    public void emptyFieldResultsInErrorMessage(){
         Job toStringTest = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         //System.out.println(toStringTest.toString());
         String stringFormat =
